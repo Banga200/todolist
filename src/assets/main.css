@@ -1,0 +1,201 @@
+
+:root{
+  --primary-color: hsla(160, 100%, 37%, 1);
+  --primary-hover: rgb(2, 130, 87);
+  --danger-color: #c50f0f;
+  --background:#223546;
+  --white: #fff;
+  --border-radius: 4px
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+#app {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--background);
+}
+#app main {
+  width: 90%;
+}
+.todolist__container {
+  background-color: var(--white);
+  padding: 1rem 3rem 1.5rem;
+  border-radius: var(--border-radius);
+  min-height: 450px;
+  max-height: 600px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.field__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ flex-wrap: wrap;
+ height: 60px;
+ background-color: var(--white);
+ width: 100%;
+ z-index: 100;
+}
+ input {
+  padding: .7rem;
+  border: 1px solid rgb(224, 224, 224);
+  width: 70%;
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+}
+ input:focus {
+  outline-color: var(--primary-color);
+}
+input.EditInput {
+  width: 150px;
+  padding: .5rem ;
+}
+.field__container button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: .7rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+.field__container button:hover {
+  background-color: var(--primary-hover);
+  transition: all .5s ease-in-out;
+}
+/* Todo items Container  */
+.todoItems__container {
+  padding-top: 10px ;
+}
+.container{
+  position: relative;
+}
+.todoitem__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 var(--border-radius) 8px rgba(0, 0, 0, .3);
+  padding: .5rem .5rem;
+  margin-top:.5rem;
+  border-radius: var(--border-radius);
+
+}
+.todo__options__container button{
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  padding: .5rem;
+  border: none;
+  margin-inline: .1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all .2s ease-in-out;
+}
+.todo__options__container button:last-child{
+  margin-left: 1rem;
+}
+.todo__options__container button.edit_button:hover{
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+.todo__options__container button.trash_button:hover{
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+.todo__options__container .confirmEdit_button:hover {
+  background-color: rgb(236, 236, 236);
+}
+.todo__options__container button.complete_button:hover {
+  background-color: var(--primary-hover);
+  color: var(--white);
+}
+.isCompleted {
+  background-color: var(--primary-color);
+}
+.isCompleted * {
+  color: var(--white);
+}
+.edit__container {
+  display: flex;
+  align-items: center;
+}
+.edit__container input {
+  margin-right: .5rem;
+}
+.edit__container svg {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: .5rem;
+}
+.edit__container svg:hover{
+  background-color: rgb(236, 236, 236);;
+  
+}
+/* Tanstions Animations  */
+/* 1. declare transition */
+fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* 2. declare enter from and leave to state */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scaleY(0.01) translate(30px, 0);
+  transition: all .5s ease-in-out;
+}
+
+/* 3. ensure leaving items are taken out of layout flow so that moving
+      animations can be calculated correctly. */
+
+
+
+
+/* Media Query  */
+/* Breakpoints  */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  #app main{
+    width: 100%;
+  }
+ }
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  #app main{
+    width: 80%;
+  }
+ }
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  #app main{
+    width: 60%;
+  }
+ }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  #app main{
+    width: 40%;
+  }
+ }
